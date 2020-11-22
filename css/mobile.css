@@ -1,0 +1,191 @@
+﻿@media (max-width: 641px) {
+    h1 {
+
+        font-size: 26px;
+        line-height: 36px;
+        color: #ffffff;
+        font-weight: 700;
+        font-family: "OpenSans-Regular";
+        text-align: center;
+    }
+
+    h2 {
+        font-size: 16px;
+        color: #0f0d0e;
+        font-weight: 700;
+        font-family: "OpenSans-Regular";
+    }
+
+    body {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .header {
+        background-image: url("../img/banner-mobile.jpg");
+        height: 100%;
+    }
+    
+    
+    .header-content {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .menu-list {
+        display: none;
+    }
+
+   .slogan {
+        position: relative;
+        z-index: 2;
+        max-width: 100%;
+        padding: 150px 0 200px;
+        margin: 0;
+    }
+    
+    .trend {
+        display: flex;
+        flex-direction: column;
+        
+    }
+
+    .cards-trend {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .card-trend {
+        display: flex;
+        width: 100%;
+        margin-bottom: 4px;
+        position: relative;
+        flex-direction: column-reverse;
+    }
+    .page-content {
+        display: flex;
+        flex-direction: column;
+        max-width: 100%;
+    }
+    .content {
+        max-width: 100%;
+    }
+
+       
+    .card {
+        flex-direction: column;
+        
+        margin-bottom: 35px;
+        padding-bottom: 10px;
+        border-bottom: 3px solid #eeeeee;
+    }
+    
+    
+    .card-picture-box {
+        max-width: 100%;
+        padding: 0;
+    }
+    
+    .card-news {
+        width: 100%;
+        padding: 0;
+        margin-top: 10px;
+    }
+    
+    .card-name {
+        margin-bottom: 15px;
+    } 
+    
+    .card-date {
+        margin-bottom: 15px;
+    }
+    
+    .card-author {
+        margin-bottom: 15px;
+    }
+    
+    .card-content {
+        margin: 0;
+    }
+    
+    .other-content {
+        display: flex;
+        flex-direction: column;
+        padding: 0;
+        
+    width: 93%;
+        margin-left: 1%;
+    }
+    
+    li.tags-list-item {
+        margin-left: 4px;
+        margin-right: 4px;
+        margin-bottom: 7px;
+        padding-left: 5px;
+        padding-right: 5px;     
+        
+    }
+    
+    .our-products {
+         display: flex;
+        flex-direction: column;
+        margin-top: 10%;
+        max-width: 100%;
+        
+    }
+    
+    .products {
+        flex-wrap: wrap;
+        flex-direction: column;
+        
+        
+    }
+    
+    .product {
+        max-width: 80%;
+        box-sizing: border-box;
+        margin-bottom: 20%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .product-content {
+        max-width: 100%;
+    }
+    
+    .socials {
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        height: 80px;
+        padding-left: 0;
+
+        margin-left: auto;
+        margin-right: auto;
+        justify-content: space-around;
+        align-items: center;
+
+        position: relative;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+    }
+
+    .copyright {
+        width: 100%;
+        padding: 80px 0 80px 0px;
+
+        font-size: 12px;
+        color: #999999;
+        font-weight: 600;
+        font-family: "Open Sans-bold";
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    
+    
+    
+}

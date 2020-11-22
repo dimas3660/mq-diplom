@@ -1,0 +1,1128 @@
+﻿@font-face {
+    font-family: "OpenSans-Regular";
+    src: url(../fonts/OpenSans-Regular.woff) format("woff"),
+        url(../fonts/OpenSans-Regular.woff2) format("woff2"),
+        url(../fonts/OpenSans-Regular.ttf) format("truetype");
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "OpenSans-Bold";
+    src: url(../fonts/OpenSans-Bold.woff) format("woff"),
+        url(../fonts/OpenSans-Bold.woff2) format("woff2"),
+        url(../fonts/OpenSans-Bold.ttf) format("truetype");
+    font-weight: 600;
+    font-style: normal;
+}
+
+body {
+    margin: 0;
+    /* задается чтобы элемент прижался влево вверх */
+    padding: 0;
+    background-color: #ffffff;
+    /* задается цвет фона */
+    position: relative;
+    /* чтобы работать с позиционированием дочерних элементов */
+}
+
+h1 {
+    font-size: 41px;
+    /* размер текста  */
+    line-height: 150%;
+    /* высота строки нужно указывать так  */
+    color: #ffffff;
+    /* цвет текста */
+    font-weight: 600;
+    /* жирность жирный  */
+    font-family: "OpenSans-Bold";
+    /* наименование шрифта  */
+    text-align: center;
+    /* выравнивание текста по центру  */
+    text-transform: uppercase;
+    /* текст капсом  */
+}
+
+h3 {
+    font-size: 20px;
+    line-height: normal;
+    font-weight: 700;
+    font-family: "OpenSans-Bold";
+    text-transform: uppercase;
+    margin: 0 0 0 0;
+}
+
+a {
+    text-decoration: none;
+    /* убирает подчеркивание у ссылок */
+    color: #000000;
+    /* изменяет цвет ссылок по умолчанию */
+}
+
+ul {
+    list-style-type: none;
+    /* убирает все маркеры у всех списков li */
+}
+
+p {
+    font-size: 15px;
+    /* задает стилизацию для всех абзацев */
+    line-height: normal;
+    color: #0f0d0e;
+    font-weight: 400;
+    font-family: "OpenSans-Regular";
+}
+
+.header {
+    /*min-height: 446px; */
+    background-image: url("../img/banner-bg.jpg");
+    background-size: cover;
+    /* картинка на всю ширину блока 
+  Картинка масштабируется относительно размеров блока. Но при заполнении cover обрезает часть изображения которая не влезла в блок. Он не сжимает изображение чтобы вписать. Качество картинки остается но лишний кусок скрывается уходя за границу блока
+  */
+    background-repeat: no-repeat;
+    /* картинка не повторяется  */
+    background-color: #000000;
+    /* подложка   */
+    position: relative;
+    margin-bottom: 60px;
+}
+
+.header::after {
+    /* маска для картинки (для прозрачности)  */
+    content: "";
+    background-color: #000000;
+    z-index: 1;
+
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    opacity: 0.6;
+    /* прозрачность  */
+}
+
+
+.logo-menu {
+    display: flex;
+    flex-wrap: wrap;
+
+    padding-top: 29px;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: space-between;
+    align-items: center;
+
+    position: relative;
+    z-index: 2;
+}
+
+.header-logotype {
+    width: 180px;
+    /* ширина логотипа  */
+    position: relative;
+    z-index: 2;
+}
+
+.menu-list {
+    display: flex;
+    /* выстраивает контейнеры в одну линию */
+    flex-wrap: wrap;
+    /* чтобы переносились на другую строку */
+
+    justify-content: space-between;
+    /* позиционирует по основной оси (х) так, что элементы равномерно распределяются по всей строке. Пустое пространство перед первым и после последнего элементов равно половине пространства между двумя соседними элементами. */
+
+    align-items: center;
+    /* центрирует по дополнительной оси (у), чтобы иконки меню располагались по центру продольной оси логотипа */
+
+    position: relative;
+    z-index: 2;
+    /* чтобы выше чем подложка  */
+
+    font-size: 13px;
+    color: #ffffff;
+    font-weight: 400;
+    font-family: "OpenSans-Regular";
+    text-align: center;
+    /* центрирует текст по центру  */
+}
+
+.menu-list {
+    padding: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+    display: flex;
+}
+
+.menu-list-item {
+    padding: 0 16px;
+    color: #ffffff;
+}
+
+.menu-list-item:hover {
+    color: #ffffff;
+}
+
+.menu-link {
+    text-decoration: none;
+    /* обнуляет базовые стили текста ссылок */
+    text-transform: uppercase;
+    font-size: 13px;
+    font-weight: 400;
+    color: inherit;
+    /* цвет наследует от родителя */
+}
+
+
+.menu-button {
+    /* кнопка бургер-меню */
+    width: 1.4em;
+    height: 1em;
+    border: none;
+    padding: 0;
+
+    background-color: transparent;
+    font-size: 25px;
+    position: relative;
+    text-indent: -9999px;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.menu-button:before,
+.menu-button:after {
+    content: "";
+    width: 100%;
+    height: 20%;
+
+    border-radius: 5px;
+    background-color: #ffffff;
+
+    position: absolute;
+    left: 0;
+}
+
+.menu-button:before {
+    top: 0;
+}
+
+.menu-button:after {
+    bottom: 0;
+}
+
+.menu-button-label {
+    width: 100%;
+    height: 20%;
+    margin-top: -0.1em;
+
+    border-radius: 5px;
+    background-color: #ffffff;
+
+    position: absolute;
+    left: 0;
+    top: 50%;
+}
+
+.slogan {
+    position: relative;
+    /* используется для того чтобы задать z-index */
+    z-index: 2;
+
+    max-width: 42%;
+    /* задается максимальная ширина элемента */
+
+    margin: auto;
+    padding: 98px 0 144px 0px;
+}
+
+.trend {
+    /*Блок сейчас в тренде*/
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 64px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.trend-title {
+    /*Заголок раздела*/
+    font-size: 20px;
+    color: #0f0d0e;
+    font-weight: 900;
+    font-family: "OpenSans-Bold";
+    text-transform: uppercase;
+
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+.trend-title::after {
+    /*Черта под заголовком раздела*/
+    content: "";
+    display: block;
+
+    width: 40%;
+    height: 3px;
+    background-color: #b59f5b;
+
+    margin-top: 13px;
+    margin-left: auto;
+    margin-right: auto;
+
+    position: relative;
+    z-index: 2;
+}
+
+
+.cards-trend {
+    /*весь блок с карточками*/
+    display: flex;
+    flex-wrap: nowrap;
+    width: 100%;
+    box-sizing: border-box;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+
+.card-trend {
+    /* сама карточка */
+    margin-right: 4px;
+    display: flex;
+    flex-wrap: wrap;
+    width: 25%;
+    position: relative;
+    flex-direction: column-reverse;
+
+}
+
+.card-trend::after {
+    /* затемнение картинки карточки */
+    content: "";
+    background-color: #000000;
+    z-index: 0;
+
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    opacity: 0.6;
+}
+
+.card-trend:last-child {
+    margin-right: 0;
+}
+
+.card-trend1 {
+    display: flex;
+    background-image: url(../img/trend1.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+    /* чтобы картинка имела полную высоту */
+}
+
+.card-trend2 {
+    display: flex;
+    background-image: url(../img/trend2.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+    /* чтобы картинка имела полную высоту */
+}
+
+.card-trend3 {
+    display: flex;
+    background-image: url(../img/trend3.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+    /* чтобы картинка имела полную высоту */
+
+}
+
+.card-trend4 {
+    display: flex;
+    background-image: url(../img/trend4.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+    /* чтобы картинка имела полную высоту */
+
+}
+
+.trend-tags {
+    /*list-style-type: none;  убирает маркер (точку) у списка */
+    display: flex;
+    /* в данном случае используется для того чтобы элементы списка */
+    flex-wrap: nowrap;
+    /* шли друг за другом в строку */
+    padding-left: 0;
+    margin-top: 0;
+    /* position: relative;  наверное можно убрать */
+}
+
+.trend-tag {
+    padding-right: 10px;
+}
+
+.trend-tag-text {
+    font-size: 14px;
+    /* шрифт текста */
+    line-height: normal;
+    /* так нужно ставить для высоты строки */
+    text-transform: uppercase;
+    /* текст капсом */
+    color: #b59f5b;
+    /* цвет текста */
+    font-weight: 700;
+    /* жирность текста - жирный */
+    font-family: "OpenSans-Bold";
+    /* шрифт тескта */
+    margin-top: 0;
+    /* отступ сверху чтобы прижать к верху контейнера */
+    padding-top: 35px;
+    /* так выставляется для высоты строки */
+}
+
+.card-trend-news {
+    /* текстовый блок-карточка */
+    box-sizing: border-box;
+    width: 90%;
+    border: 3px solid #b59f5b;
+
+    z-index: 2;
+
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 15px;
+    margin-top: 140px;
+    padding-top: 33px;
+    padding-bottom: 31px;
+    padding-left: 33px;
+    padding-right: 20px;
+    /*height: fit-content;*/
+    vertical-align: baseline;
+}
+
+.trend-tags {
+    display: flex;
+    flex-wrap: nowrap;
+    padding-left: 0;
+    margin-top: 0;
+}
+
+.trend-tag {
+    padding-right: 20px;
+}
+
+.trend-tag-text {
+    font-size: 14px;
+    line-height: normal;
+    text-transform: uppercase;
+    color: #b59f5b;
+    font-weight: 700;
+    font-family: "OpenSans-Bold";
+    margin-top: 0;
+    padding-top: 35px;
+}
+
+.trend-name {
+    /* заголоок-ссылка */
+    font-size: 18px;
+    line-height: normal;
+    color: #ffffff;
+    font-weight: 700;
+    font-family: "OpenSans-Regular";
+}
+
+.trend-name:hover {
+    /* изменение цвета текста ссылки при наведении */
+    color: #b59f5b;
+}
+
+.page-content {
+    width: 1170px;
+    display: flex;
+    /* воспринимается как flex контейнер  */
+    max-width: 80%;
+    margin-right: auto;
+    /* чтобы центрировался при изменении размера экрана  */
+    margin-left: auto;
+}
+
+.content {
+    max-width: 66%;
+    /* макс ширина от родителя .page-content в % а не в px */
+    flex-direction: column;
+    /* контейнеры в столбик */
+    justify-content: space-around;
+    /* Равномерно распределяет все элементы по ширине flex-блока. Расстояние от первого или последнего элемента до границы равно половнине расстояния между блоками */
+}
+
+.cards {
+    margin: 0;
+    padding: 0;
+}
+
+.card {
+    display: flex;
+    /* чтобы текст находился рядом с картинкой в карточке */
+    box-sizing: border-box;
+    /* считает за width ширину контента */
+}
+
+
+
+.card-picture {
+    display: block;
+    /* в данном случе задается для того чтобы картинка имела определенный размер блока (верстка не прыгала) */
+    width: 100%;
+    background-color: #fff;
+    /* при отсутствии картинки будет надпись на белом фоне */
+    padding: 0;
+}
+
+.card-picture-box {
+    max-width: 50%;
+    box-sizing: border-box;
+}
+
+.card-news {
+    box-sizing: border-box;
+    padding: 0 0 0 30px;
+    background-color: #fff;
+    width: 50%;
+    /* задаем 50% от родительского контейнера (карточка), оставшиеся 50% придутся на картинку */
+}
+
+.card-tags {
+    /*list-style-type: none;  убирает маркер (точку) у списка */
+    display: flex;
+    /* в данном случае используется для того чтобы элементы списка */
+    flex-wrap: wrap;
+    /* шли друг за другом в строку */
+    padding-left: 0;
+    margin-top: 0;
+    /* position: relative;  наверное можно убрать */
+}
+
+.card-tag {
+    padding-right: 10px;
+}
+
+.card-tag-text {
+    font-size: 14px;
+    /* шрифт текста */
+    line-height: normal;
+    /* так нужно ставить для высоты строки */
+    text-transform: uppercase;
+    /* текст капсом */
+    color: #b59f5b;
+    /* цвет текста */
+    font-weight: 700;
+    /* жирность текста - жирный */
+    font-family: "OpenSans-Bold";
+    /* шрифт тескта */
+    margin-top: 0;
+    /* отступ сверху чтобы прижать к верху контейнера */
+    padding-top: 35px;
+    /* так выставляется для высоты строки */
+}
+
+.card-name {
+    margin-top: 13px;
+    margin-bottom: 35px;
+}
+
+.card-name a {
+    /* задает цвет ссылки */
+    color: #0f0d0e;
+}
+
+.card-date {
+    padding-right: 10px;
+
+    font-size: 12px;
+    line-height: normal;
+    color: #888888;
+    font-weight: 400;
+    font-family: "OpenSans-Regular";
+    margin-bottom: 50px;
+}
+
+.card-author {
+    font-size: 12px;
+    line-height: normal;
+    color: #000000;
+    font-weight: 700;
+    font-family: "OpenSans-Regular";
+    margin-bottom: 50px;
+}
+
+.card-content {
+    margin-top: 50px;
+    margin-bottom: 25px;
+}
+
+.other-content {
+    /* весь блок боковой панели  */
+    display: flex;
+    /* для того чтобы элементы стали flex контейнерами  */
+    flex-direction: column;
+    /* чтобы блоки шли только в столбик  */
+    width: 24%;
+    padding: 0;
+    margin-left: 120px;
+}
+
+.other-content-title {
+    font-size: 14px;
+    color: #0f0d0e;
+    font-weight: 700;
+    font-family: "OpenSans-Bold";
+    text-transform: uppercase;
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+.other-content-title::after {
+    /* коричневая полоска  */
+    content: "";
+    display: block;
+    /* для того чтобы задать ширину и высоту   */
+
+    width: 20%;
+    height: 3px;
+    background-color: #b59f5b;
+
+    margin-top: 13px;
+    margin-left: auto;
+    margin-right: auto;
+
+    position: relative;
+    z-index: 2;
+}
+
+.newpost {
+    display: flex;
+    margin-top: 20px;
+    box-sizing: border-box;
+    padding: 0;
+}
+
+/*.newpost:first-child {
+  margin-top: 0px;
+  padding-bottom: 20px;
+}*/
+
+.newpost-picture {
+    padding: 0;
+    background-color: #fff;
+}
+
+.newpost-card {
+    padding-left: 10px;
+    background-color: #fff;
+}
+
+.newpost-card-date {
+    display: block;
+    font-size: 12px;
+    line-height: normal;
+    color: #888888;
+    font-weight: 400;
+    font-family: "OpenSans-Regular";
+}
+
+.newpost-card-name {
+    box-sizing: border-box;
+    font-size: 14px;
+    color: #0f0d0e;
+    font-weight: 700;
+    font-family: "OpenSans-Bold";
+}
+
+.newpost-card-name a {
+    color: #0f0d0e;
+}
+
+.search-form {
+    display: flex;
+    /* для того чтобы два блока input и button встали рядом в одну строку   */
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.search {
+    background-color: #f4f7f6;
+    height: 48px;
+    flex-grow: 1;
+    /*Свойство flex-grow устанавливает коэффициент роста флекс-элемента, который определяет, насколько элемент будет вырастать относительно других флекс-элементов (после распределения свободного пространства).*/
+    border: none;
+
+    font-size: 13px;
+    color: #000000;
+    font-weight: 400;
+    font-family: "OpenSans-Regular";
+    padding-left: 3px;
+}
+
+.search-button-label,
+.find-label,
+.email-label {
+    /* прячем текст на кнопке  и скрываем текстовые подсказки полей ввода */
+    width: 1px;
+    height: 1px;
+    clip: rect(1px, 1px, 1px, 1px);
+    position: absolute;
+}
+
+.search-button {
+    /* рисуем кнопку   */
+    width: 48px;
+    /* ширина высота кнопки   */
+    height: 48px;
+    border: none;
+    /* border-radius: 50%;  делаем кнопку круглой   */
+    padding: 0;
+
+    background-size: 18px;
+    /* размер картинки с лупой   */
+    background-image: url(https://netology-code.github.io/html-2-diploma/sources/images/search.svg);
+    background-color: #b59f5b;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.search-button:hover {
+    /* изменение цвета при наведение на кнопку   */
+    background-color: #323232;
+}
+
+.email {
+    background-color: #f4f7f6;
+    height: 48px;
+    width: 97%;
+    margin-top: 20px;
+    margin-bottom: 17px;
+    padding-left: 3px;
+    color: #000000;
+    font-weight: 400;
+    font-family: "OpenSans-Regular";
+    border: 1px solid transparent;
+    /* так как у формы нет flex, то поля располагаются друг за другом, сверху вниз, занимая 100% ширины боковой панели. При наведении фокуса появится рамка и будет прыгать вся верстка. Чтобы этого избежать задаем рамку заранее, но со значением transparent - невидимая. И верстка не будет прыгать  */
+    padding-right: 0;
+}
+
+.email:hover {
+    border: 1px solid #b59f5b;
+}
+
+.email-button {
+    height: 48px;
+    width: 100%;
+    background-color: #b59f5b;
+    border: none;
+    margin-bottom: 40px;
+    font-size: 14px;
+    line-height: normal;
+    color: #ffffff;
+    font-weight: 700;
+    font-family: "OpenSans-Regular";
+}
+
+.email-button:hover {
+    color: #323232;
+}
+
+.tags {
+    margin-top: 0;
+    margin-bottom: 40px;
+    padding-left: 0;
+}
+
+.tags-list {
+    text-transform: uppercase;
+    padding: 0;
+    display: flex;
+    /* для того чтобы элементы списка li стали flex контейнерами */
+    flex-wrap: wrap;
+    /* для того чтобы элементы списка li переносились на следующу строку */
+}
+
+li.tags-list-item {
+    background-color: rgba(253, 249, 242, 0);
+    border: 3px solid #eeeeee;
+
+    margin-right: 7px;
+    /* отступы внешние от грницы блока ссылок */
+    margin-bottom: 7px;
+    padding-left: 10px;
+    /* отступы внутренние от текста до границы рамки */
+    padding-right: 10px;
+    /*padding-top: 4px; убираем, так как задали высоту межстрочного интервала
+  padding-bottom: 4px;*/
+}
+
+.tags-list-title {
+    /* текст ссылки */
+    font-size: 14px;
+    line-height: 29px;
+    /* задает высоту межстрочного интервала для текста ссылки */
+    color: #0f0d0e;
+    font-weight: 700;
+    font-family: "OpenSans-Regular";
+}
+
+.teams-list {
+    margin: 0;
+    padding: 0;
+}
+
+.teams-list-item {
+    padding-top: 8px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #eeeeee;
+}
+
+.teams-list-title {
+    font-family: "OpenSans-Bold";
+    font-size: 14px;
+    text-transform: none;
+    color: #0f0d0e;
+}
+
+.teams-list-number {
+    font-size: 12px;
+    color: #b59f5b;
+    font-weight: 700;
+    font-family: "OpenSans-Bold";
+    vertical-align: super;
+    /* выравнивает положение текста выше черты (аналог sup) */
+    padding-left: 2px;
+}
+
+.our-products {
+    /*Блок Наши изделия*/
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    /*2*/
+    margin-bottom: 64px;
+    max-width: 73%;
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
+    /*1*/
+}
+
+.our-products-title {
+    /*Заголок раздела*/
+    font-size: 20px;
+    color: #0f0d0e;
+    font-weight: 900;
+    font-family: "OpenSans-Bold";
+    text-transform: uppercase;
+
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0;
+    margin-bottom: 20px;
+
+}
+
+.our-products-title::after {
+    /*Черта под заголовком раздела*/
+    content: "";
+    display: block;
+
+    width: 40%;
+    height: 3px;
+    background-color: #b59f5b;
+
+    margin-top: 13px;
+    margin-left: auto;
+    margin-right: auto;
+
+    position: relative;
+    z-index: 2;
+}
+
+.products {
+    /*весь блок с карточками*/
+    display: flex;
+    margin-right: auto;
+    margin-left: auto;
+    align-items: stretch;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+}
+
+.product {
+    font-size: 14px;
+    display: flex;
+    flex-direction: column;
+    /*3*/
+    flex-grow: 1;
+    /*4*/
+    max-width: 30%;
+    margin-left: 3%;
+    /*5*/
+    margin-right: 3%;
+    /*6*/
+}
+
+.product-content {
+    max-width: 90%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    flex-grow: 1;
+    /*7. изменения 8 и 9 ищи в тренде и пейдж-контент*/
+    align-items: stretch;
+}
+
+
+
+.product-img {
+    max-width: 100%;
+}
+
+.product-content-text {
+    max-width: 100%;
+    padding-top: 20px;
+    outline: 3px solid #b59f5b;
+    /* сама рамка*/
+    outline-offset: 28px;
+    /* выносят рамку за блок, расстояние от блока*/
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    flex-grow: 1;
+    /* растягивает блок на максимальную величину, чтобы все блоки были одинаковы */
+
+}
+
+.product-title {
+    font-size: 20px;
+    line-height: 24px;
+    color: #0f0d0e;
+    font-weight: 900;
+    font-family: "OpenSans-Regular";
+}
+
+.product-description {
+    font-size: 15px;
+    line-height: 22px;
+    color: #0f0d0e;
+    font-weight: 400;
+    font-family: "OpenSans-Regular";
+}
+
+
+.product-video {
+    font-size: 15px;
+    line-height: 22px;
+    color: #b59f5b;
+    font-weight: 400;
+    font-family: "OpenSans-Regular";
+}
+
+.product-video:hover {
+    color: #0f0d0e;
+}
+
+.product-footer {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    justify-content: space-between;
+    padding-top: 20px;
+    padding-bottom: 0;
+    width: 100%;
+}
+
+.product-price {
+    font-size: 24px;
+    font-weight: 700;
+    color: #222;
+    line-height: 1;
+    display: flex;
+    font-family: "OpenSans-Regular";
+}
+
+.product-price-old {
+    text-decoration: line-through;
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.product-rub {
+    margin-left: .2em;
+}
+
+.product-button {
+    display: flex;
+    align-items: center;
+    border: none;
+
+    width: 140px;
+    height: 48px;
+    background-color: #b59f5b;
+}
+
+.product-button:hover {
+    background-color: #323232;
+}
+
+.product-link {
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 14px;
+    line-height: 40px;
+    color: #ffffff;
+    font-weight: 700;
+    font-family: "OpenSans-Regular";
+    text-transform: uppercase;
+}
+
+
+
+.socials-base {
+    width: 80%;
+    height: 80px;
+    padding-left: 0;
+
+    background-color: #f4f7f6;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.socials {
+    list-style-type: none;
+    /* убирает метки (точки) у элементов списка li */
+    display: flex;
+    /* выстраивает контейнеры в одну линию */
+    flex-wrap: wrap;
+    /* чтобы переносились на другую строку */
+
+    width: 25%;
+    /* ширина блока с ссылками соцсетей относительно родительского контейнера, в данном случае socials-base  */
+    height: 80px;
+    padding-left: 0;
+    /* сброс паддингов по умолчанию у списка ul */
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: space-around;
+    /* Равномерно распределяет все элементы по ширине flex-блока.Все элементы имеют полуразмерное пространство с обоих концов */
+    align-items: center;
+    /* флекс элементы выравниваются по центру контейнера */
+
+    position: relative;
+    /* позиционирование относительно родительского контейнера и для z-index */
+    z-index: 1;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+
+.socials-item {
+    /* задаем размер пункту списка ul */
+    height: 20px;
+    width: 1px;
+    margin-top: 0;
+    margin-right: 0;
+}
+
+.socials-link {
+    width: 20px;
+    /* размер иконки */
+    height: 20px;
+    background-repeat: no-repeat;
+    background-size: 20px;
+    /* размер подложки икноки(картинки) */
+    background-position: center;
+    position: absolute;
+    z-index: 2;
+}
+
+.socials-link-twitter {
+    background-image: url("https://netology-code.github.io/html-2-diploma/sources/images/social/004-twitter.svg");
+}
+
+.socials-link-pinterest {
+    background-image: url("https://netology-code.github.io/html-2-diploma/sources/images/social/001-pinterest.svg");
+}
+
+.socials-link-facebook {
+    background-image: url("https://netology-code.github.io/html-2-diploma/sources/images/social/002-facebook-logo.svg");
+}
+
+.socials-link-instagram {
+    background-image: url("https://netology-code.github.io/html-2-diploma/sources/images/social/005-instagram.svg");
+}
+
+.socials-link-tumblr {
+    background-image: url("https://netology-code.github.io/html-2-diploma/sources/images/social/003-tumblr.svg");
+}
+
+.socials-link-text {
+    /* скрываем текст кнопок */
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    clip: rect(1px, 1px, 1px, 1px);
+}
+
+.copyright {
+    width: 18.7%;
+    padding: 80px 0 80px 40px;
+
+    font-size: 12px;
+    color: #999999;
+    font-weight: 600;
+    font-family: "OpenSans-Bold";
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media (min-width: 1200px) {
+
+
+    .header-content {
+        width: 1170px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+
+    .menu-button,
+    .menu-button-label {
+        display: none;
+    }
+    
+    .card:nth-child(n + 1) {
+    margin-top: 0;
+    padding-top: 0;
+    padding-bottom: 65px;
+        
+        
+}
+    .product:first-child {
+    margin-left: 0;
+}
+
+.product:last-child {
+    margin-right: 0;
+}
+}
