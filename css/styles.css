@@ -448,13 +448,15 @@ p {
 }
 
 .page-content {
-    width: 1170px;
+    max-width: 1200px;
     display: flex;
     /* воспринимается как flex контейнер  */
-    max-width: 80%;
     margin-right: auto;
     /* чтобы центрировался при изменении размера экрана  */
     margin-left: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+    box-sizing: border-box;
 }
 
 .content {
@@ -672,7 +674,8 @@ p {
     color: #000000;
     font-weight: 400;
     font-family: "OpenSans-Regular";
-    padding-left: 3px;
+    padding-left: 15px;
+    box-sizing: border-box;
 }
 
 .search-button-label,
@@ -710,16 +713,17 @@ p {
 .email {
     background-color: #f4f7f6;
     height: 48px;
-    width: 97%;
+    width: 100%;
     margin-top: 20px;
     margin-bottom: 17px;
-    padding-left: 3px;
+    padding-left: 15px;
     color: #000000;
     font-weight: 400;
     font-family: "OpenSans-Regular";
     border: 1px solid transparent;
     /* так как у формы нет flex, то поля располагаются друг за другом, сверху вниз, занимая 100% ширины боковой панели. При наведении фокуса появится рамка и будет прыгать вся верстка. Чтобы этого избежать задаем рамку заранее, но со значением transparent - невидимая. И верстка не будет прыгать  */
     padding-right: 0;
+    box-sizing: border-box;
 }
 
 .email:hover {
@@ -815,13 +819,14 @@ li.tags-list-item {
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
-    /*2*/
     margin-bottom: 64px;
-    max-width: 73%;
+    max-width: 1200px;
+    padding-left: 15px;
+    padding-right: 15px;
     margin-left: auto;
     margin-right: auto;
     box-sizing: border-box;
-    /*1*/
+
 }
 
 .our-products-title {
@@ -870,14 +875,11 @@ li.tags-list-item {
     font-size: 14px;
     display: flex;
     flex-direction: column;
-    /*3*/
     flex-grow: 1;
-    /*4*/
     max-width: 30%;
-    margin-left: 3%;
-    /*5*/
-    margin-right: 3%;
-    /*6*/
+    margin-left: 1%;
+    margin-right: 1%;
+    padding-left: 28px;
 }
 
 .product-content {
@@ -997,13 +999,14 @@ li.tags-list-item {
 
 
 .socials-base {
-    width: 80%;
+    max-width: 1170px;
     height: 80px;
     padding-left: 0;
 
     background-color: #f4f7f6;
     margin-left: auto;
     margin-right: auto;
+    box-sizing: border-box;
 }
 
 .socials {
@@ -1014,15 +1017,15 @@ li.tags-list-item {
     flex-wrap: wrap;
     /* чтобы переносились на другую строку */
 
-    width: 25%;
+    /*width: 25%;*/
     /* ширина блока с ссылками соцсетей относительно родительского контейнера, в данном случае socials-base  */
     height: 80px;
     padding-left: 0;
     /* сброс паддингов по умолчанию у списка ul */
     margin-left: auto;
     margin-right: auto;
-    justify-content: space-around;
-    /* Равномерно распределяет все элементы по ширине flex-блока.Все элементы имеют полуразмерное пространство с обоих концов */
+    justify-content: center;
+   
     align-items: center;
     /* флекс элементы выравниваются по центру контейнера */
 
@@ -1040,7 +1043,8 @@ li.tags-list-item {
     height: 20px;
     width: 1px;
     margin-top: 0;
-    margin-right: 0;
+    margin-right: 20px;
+    margin-left: 20px;
 }
 
 .socials-link {
@@ -1085,7 +1089,7 @@ li.tags-list-item {
 
 .copyright {
     width: 18.7%;
-    padding: 80px 0 80px 40px;
+    padding: 80px 0 80px 0;
 
     font-size: 12px;
     color: #999999;
@@ -1110,19 +1114,20 @@ li.tags-list-item {
     .menu-button-label {
         display: none;
     }
-    
-    .card:nth-child(n + 1) {
-    margin-top: 0;
-    padding-top: 0;
-    padding-bottom: 65px;
-        
-        
-}
-    .product:first-child {
-    margin-left: 0;
-}
 
-.product:last-child {
-    margin-right: 0;
-}
+    .card:nth-child(n + 1) {
+        margin-top: 0;
+        padding-top: 0;
+        padding-bottom: 65px;
+
+
+    }
+
+    .product:first-child {
+        margin-left: 0;
+    }
+
+    .product:last-child {
+        margin-right: 0;
+    }
 }

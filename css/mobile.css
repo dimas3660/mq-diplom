@@ -25,35 +25,52 @@
         background-image: url("../img/banner-mobile.jpg");
         height: 100%;
     }
-    
-    
+
+
     .header-content {
         padding-left: 10px;
         padding-right: 10px;
+    }
+
+    .logo-menu {
+        justify-content: flex-end;
+    }
+
+
+    .header-logotype {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        margin-left: auto;
+        margin-right: auto;
+        padding-top: 150px;
     }
 
     .menu-list {
         display: none;
     }
 
-   .slogan {
+    .slogan {
         position: relative;
         z-index: 2;
         max-width: 100%;
         padding: 150px 0 200px;
-        margin: 0;
+        margin: auto;
     }
-    
+
     .trend {
         display: flex;
         flex-direction: column;
-        
+
     }
 
     .cards-trend {
         display: flex;
         flex-wrap: wrap;
     }
+
     .card-trend {
         display: flex;
         width: 100%;
@@ -61,85 +78,88 @@
         position: relative;
         flex-direction: column-reverse;
     }
+
     .page-content {
         display: flex;
         flex-direction: column;
         max-width: 100%;
     }
+
     .content {
         max-width: 100%;
     }
 
-       
+
     .card {
         flex-direction: column;
-        
+
         margin-bottom: 35px;
         padding-bottom: 10px;
         border-bottom: 3px solid #eeeeee;
     }
-    
-    
+
+
     .card-picture-box {
         max-width: 100%;
         padding: 0;
     }
-    
+
     .card-news {
         width: 100%;
         padding: 0;
         margin-top: 10px;
     }
-    
+
     .card-name {
         margin-bottom: 15px;
-    } 
-    
+    }
+
     .card-date {
         margin-bottom: 15px;
     }
-    
+
     .card-author {
         margin-bottom: 15px;
     }
-    
+
     .card-content {
         margin: 0;
     }
-    
+
     .other-content {
         display: flex;
         flex-direction: column;
         padding: 0;
-        
-    width: 93%;
-        margin-left: 1%;
+
+        margin-left: 0;
+        width: 100%;
+
     }
-    
+
     li.tags-list-item {
         margin-left: 4px;
         margin-right: 4px;
         margin-bottom: 7px;
         padding-left: 5px;
-        padding-right: 5px;     
-        
+        padding-right: 5px;
+
     }
-    
+
     .our-products {
-         display: flex;
+        display: flex;
         flex-direction: column;
         margin-top: 10%;
         max-width: 100%;
-        
+
     }
-    
+
     .products {
         flex-wrap: wrap;
         flex-direction: column;
-        
-        
+
+
     }
-    
+
     .product {
         max-width: 80%;
         box-sizing: border-box;
@@ -147,11 +167,11 @@
         margin-left: auto;
         margin-right: auto;
     }
-    
+
     .product-content {
         max-width: 100%;
     }
-    
+
     .socials {
         display: flex;
         flex-wrap: wrap;
@@ -184,8 +204,13 @@
         margin-left: auto;
         margin-right: auto;
     }
-    
-    
-    
-    
+
+    .search-button-label,
+    .find-label,
+    .email-label {
+        margin-left: 0;
+        padding-left: 0;
+    }
+
+
 }
