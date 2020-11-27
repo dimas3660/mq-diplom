@@ -880,7 +880,9 @@ li.tags-list-item {
     margin-left: 1%;
     margin-right: 1%;
     padding-left: 28px;
-}
+    box-sizing: border-box;
+  }
+
 
 .product-content {
     max-width: 90%;
@@ -896,6 +898,7 @@ li.tags-list-item {
 
 .product-img {
     max-width: 100%;
+    box-sizing: border-box;
 }
 
 .product-content-text {
@@ -1025,7 +1028,7 @@ li.tags-list-item {
     margin-left: auto;
     margin-right: auto;
     justify-content: center;
-   
+
     align-items: center;
     /* флекс элементы выравниваются по центру контейнера */
 
@@ -1100,15 +1103,288 @@ li.tags-list-item {
     margin-right: auto;
 }
 
+
+.popup-close {
+    /* кнопка закрытие фитбека */
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    text-indent: -9999px;
+    cursor: pointer;
+
+    width: 18px;
+    height: 18px;
+    font-size: 16px;
+
+    position: absolute;
+    top: -30px;
+    right: 0;
+
+}
+
+.popup-close:before,
+.popup-close:after {
+    content: "";
+    background-color: #ffffff;
+    border-radius: 2px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 24px;
+    height: 4px;
+}
+
+.popup-close:before {
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.popup-close:after {
+    transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+/* конец кнопки закрытия фитбека */
+
+.popup::before {
+    /* маска для всей страницы (при использовании фидбэка)  */
+    content: "";
+    background-color: #000000;
+
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    opacity: 0.7;
+    /* прозрачность  */
+}
+
+.popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 9999;
+}
+
+.popup-activ {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.popup-container {
+    box-sizing: border-box;
+    width: 390px;
+    background-color: #ffffff;
+    position: relative;
+    z-index: 9998;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.popup-content {
+    display: flex;
+    flex-direction: column;
+    padding-left: 27px;
+    padding-right: 27px;
+}
+
+.popup-title {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0;
+    font-size: 20px;
+    line-height: normal;
+    color: #0f0d0e;
+    font-weight: 700;
+    font-family: "OpenSans-Bold";
+
+}
+
+.popup-title::after {
+    /*Черта под заголовком раздела*/
+    content: "";
+    display: block;
+
+    width: 40%;
+    height: 3px;
+    background-color: #b59f5b;
+
+    margin-top: 13px;
+    margin-left: auto;
+    margin-right: auto;
+
+    position: relative;
+    z-index: 2;
+}
+
+.popup-form {
+    width: 100%;
+}
+
+.select-label {
+    margin-bottom: 30px;
+}
+
+.radio-label {
+    margin-bottom: 30px;
+}
+
+.select-text {
+    font-size: 13px;
+    line-height: 40px;
+    color: #000000;
+    font-weight: 400;
+    font-family: "OpenSans-Regular";
+
+}
+
+.popup-select {
+    display: block;
+    box-sizing: border-box;
+    width: 100%;
+    height: 48px;
+    background-color: #f4f7f6;
+    border: 1px solid transparent;
+    padding-left: 20px;
+
+    -webkit-appearance: none;
+    /*Сброс стандартных стилей стрелочки выпадающего списка*/
+    -moz-appearance: none;
+
+    background-size: 8px 17px;
+    /*Задаем новые стрелочки выпадающего списка*/
+    background-image: url(../svg/form-arrows.svg);
+    background-repeat: no-repeat;
+    background-position: right 5px center;
+
+}
+
+.popup-select:focus {
+    /*При наведении фокуса на данное окно*/
+    border: 1px solid #b59f5b;
+}
+
+.radio-group {
+    display: inline-block;
+    font-size: 13px;
+    color: #000000;
+    font-weight: 400;
+    font-family: "OpenSans-Regular";
+    margin-left: 15px;
+}
+
+.radio-group:nth-of-type(n+2) {
+    margin-left: 15px;
+}
+
+.label-radio-text {
+    font-size: 13px;
+    color: #000000;
+    font-weight: 400;
+    font-family: "OpenSans-Regular";
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+.radio-text {
+    font-size: 13px;
+    color: #000000;
+    font-weight: 400;
+    font-family: "OpenSans-Regular";
+}
+
+.radio-text::before {
+    /*Заменяем стандартный кружок кнопки выбора на нужный нам (пустой)*/
+    content: "";
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 8px;
+
+    width: 15px;
+    height: 15px;
+
+    background-image: url(../svg/form-empty-circle.svg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 15px;
+}
+
+.radio:checked ~ .radio-text::before {
+    /*Заменяем стандартный кружок кнопки выбора при его выборе на нужный нам (заполненный)*/
+    background-image: url(../svg/form-circle.svg);
+}
+
+.radio {
+    /* скрываем стандартные кружки радиокнопок */
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    clip: rect(1px, 1px, 1px, 1px);
+}
+
+.comment {
+    box-sizing: border-box;
+    width: 100%;
+    height: 131px;
+    resize: none;
+    /* запрет изменения размера текстового поля */
+    background-color: #f4f7f6;
+    border: 1px solid transparent;
+    font-size: 13px;
+    color: #000000;
+    font-weight: 400;
+    font-family: "OpenSans-Regular";
+    opacity: 0.6;
+    margin-top: 30px;
+    padding-left: 20px;
+}
+
+.comment:hover {
+    border: 1px solid #b59f5b;
+}
+
+.comment-text {
+    font-size: 13px;
+    color: #000000;
+    font-weight: 400;
+    font-family: "OpenSans-Regular";
+
+}
+
+.popup-button {
+    width: 100%;
+    height: 48px;
+    flex-grow: 1;
+    margin-top: 30px;
+    border: none;
+    background-color: #b59f5b;
+}
+
+.button-text {
+    font-size: 14px;
+    color: #ffffff;
+    font-weight: 700;
+    font-family: "OpenSans-Bold";
+    line-height: 40px;
+}
+
+.popup-button:hover {
+    background-color: #323232;
+}
+
+._hidden {
+    /*Прячет блок фидбэка с этим классом*/
+    display: none;
+}
+
 @media (min-width: 1200px) {
-
-
     .header-content {
         width: 1170px;
         margin-left: auto;
         margin-right: auto;
     }
-
 
     .menu-button,
     .menu-button-label {
@@ -1119,8 +1395,6 @@ li.tags-list-item {
         margin-top: 0;
         padding-top: 0;
         padding-bottom: 65px;
-
-
     }
 
     .product:first-child {

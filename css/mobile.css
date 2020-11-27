@@ -137,11 +137,11 @@
     }
 
     li.tags-list-item {
-        margin-left: 4px;
-        margin-right: 4px;
+        margin-left: 3px;
+        margin-right: 3px;
         margin-bottom: 7px;
-        padding-left: 5px;
-        padding-right: 5px;
+        padding-left: 4px;
+        padding-right: 4px;
 
     }
 
@@ -181,7 +181,7 @@
 
         margin-left: auto;
         margin-right: auto;
-        justify-content: space-around;
+        justify-content: center;
         align-items: center;
 
         position: relative;
@@ -211,6 +211,58 @@
         margin-left: 0;
         padding-left: 0;
     }
+    .popup-activ {
+        position: absolute;
+        overflow: scroll;
+    }
 
+}
+
+@media (orientation:landscape) {
+    .header {
+        background-image: url(../img/banner-bg-tablet.jpg);
+        height: 100vh;
+    }
+
+    .trend {
+        flex-wrap: wrap;
+    }
+
+    .cards-trend {
+        flex-wrap: wrap;
+    }
+
+    .card-trend {
+        /* сама карточка */
+        width: 49%;
+        height: auto;
+        margin: 0.25%;
+    }
+
+    .our-products {
+        margin-top: 15%;
+        max-width: 100%;
+    }
+
+    .products {
+        flex-wrap: wrap;
+        flex-direction: row;
+    }
+
+    .product {
+        max-width: 40%;
+        box-sizing: border-box;
+        margin-bottom: 10%;
+        margin-left: 3%;
+        margin-right: 5%;
+    }
+
+    .product:nth-child(2n+1) {
+        margin-left: 7%;
+    }
+
+    .product-content-text {
+        outline-offset: 20px;
+    }
 
 }
