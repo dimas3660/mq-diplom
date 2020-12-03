@@ -16,12 +16,6 @@
         font-family: "OpenSans-Bold";
     }
 
-    .header {
-        background-image: url("../img/banner-bg-tablet.jpg");
-
-    }
-
-
     .header-content {
         /*шапка меню*/
         padding-left: 30px;
@@ -147,8 +141,6 @@
 
     }
 
- 
-
     .product-content {
         max-width: 100%;
     }
@@ -186,7 +178,7 @@
         margin-right: auto;
     }
 
-    @media (orientation: landscape) {
+    @media (min-width: 641px) and (max-width: 1199px) and (orientation: landscape) {
 
         .header {
             background-image: url("../img/banner-bg-tablet.jpg");
@@ -234,7 +226,7 @@
 
     }
 
-    @media (orientation: landscape) {
+    @media (orientation:landscape) {
         .trend {
             margin-bottom: 64px;
             width: 100%;

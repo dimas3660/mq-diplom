@@ -74,7 +74,6 @@ p {
 }
 
 .header {
-    /*min-height: 446px; */
     background-image: url("../img/banner-bg.jpg");
     background-size: cover;
     /* картинка на всю ширину блока 
@@ -103,6 +102,11 @@ p {
     /* прозрачность  */
 }
 
+.header-content {
+    max-width: 1200px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
 
 .logo-menu {
     display: flex;
@@ -230,7 +234,7 @@ p {
     /* используется для того чтобы задать z-index */
     z-index: 2;
 
-    max-width: 42%;
+    max-width: 45%;
     /* задается максимальная ширина элемента */
 
     margin: auto;
@@ -881,7 +885,7 @@ li.tags-list-item {
     margin-right: 1%;
     padding-left: 28px;
     box-sizing: border-box;
-  }
+}
 
 
 .product-content {
@@ -893,8 +897,6 @@ li.tags-list-item {
     /*7. изменения 8 и 9 ищи в тренде и пейдж-контент*/
     align-items: stretch;
 }
-
-
 
 .product-img {
     max-width: 100%;
@@ -931,7 +933,6 @@ li.tags-list-item {
     font-weight: 400;
     font-family: "OpenSans-Regular";
 }
-
 
 .product-video {
     font-size: 15px;
@@ -998,8 +999,6 @@ li.tags-list-item {
     font-family: "OpenSans-Regular";
     text-transform: uppercase;
 }
-
-
 
 .socials-base {
     max-width: 1170px;
@@ -1395,6 +1394,31 @@ li.tags-list-item {
         margin-top: 0;
         padding-top: 0;
         padding-bottom: 65px;
+    }
+
+
+    .our-products {
+        /*Блок Наши изделия*/
+        flex-direction: column;
+        margin-bottom: 92px;
+        max-width: 1200px;
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .products {
+        /*весь блок с карточками*/
+        flex-wrap: nowrap;
+        justify-content: space-between;
+
+    }
+
+    .product {
+        width: 30%;
+        margin-left: 2.5%;
+        margin-right: 2.5%;
     }
 
     .product:first-child {
